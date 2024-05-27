@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %} Blood Donation {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h3><i style="font-weight: bold;    ">Qon uchun so'rov</i></h3>
+    <form method="POST"> {% csrf_token %}
+<div class="row mt-4">
+    <div class="form-group col-md-12">
+        <label><i style="font-weight: bold;">To'liq Ismingiz</i></label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="F.I.Sh" required>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Email ID</i></label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="Emailni kiriting" required>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Telefon raqamingiz</i></label>
+        <input type="tel" class="form-control" name="phone" id="phone" placeholder="+998" required>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Viloyat</i></label>
+        <input type="text" class="form-control" name="state" id="state" placeholder="Viloyatingizni kiriting" required>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Shahar/Tuman</i></label>
+        <input type="text" class="form-control" name="city" id="city" placeholder="Shahar yoki tumaningizni kiriting" required>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-12">
+        <label><i style="font-weight: bold;">Address</i></label>
+        <textarea class="form-control" id="address" name="address" rows="3" placeholder="Manzilingizni kiriting" required></textarea>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Qon guruhingizni tanlang</i></label>
+        <select class="form-control" name="blood_group" required>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>O+</option>
+            <option>O-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            </select>
+    </div>
+        <div class="form-group col-md-6">
+            <label><i style="font-weight: bold;">Sanani tanlang</i></label>
+            <input type="date" class="form-control" id="date" name="date" required>
+        </div>
+</div>
+<button type="submit" class="btn btn-primary">Yuborish</button>
+<button type="reset" class="btn btn-primary">Tozalash</button>
+</form>
+</div>
+{% endblock %}

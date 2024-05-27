@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% block title %} Blood Donation {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h4>Donor sifatida ro'yxatdan o'tish</h4>
+    <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        <!-- <div class="row mt-4">
+            <div class="form-group col-md-12">
+                <label><i style="font-weight: bold;">Foydanuvchi nomi</i></label>
+                <input type="text" class="form-control" id="username" placeholder="Foydalanuvchi nomini kiriting" required>
+            </div>
+        </div> -->
+        
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Ism</i></label>
+        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Ismingizni kiriting" required>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Familiya</i></label>
+        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Familiyangizni kiriting" required>
+    </div>
+    <!-- <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">To'liq Ismingiz</i></label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="F.I.Sh" required>
+    </div> -->
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Email</i></label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="Email kiriting" required>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Telefon raqam</i></label>
+        <input type="tel" class="form-control" name="phone" id="phone" placeholder="+998901234567" required>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Viloyat</i></label>
+        <input type="text" class="form-control" name="state" id="state" placeholder="Viloyatingizni kiriting" required>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Shahar yoki Tuman</i></label>
+        <input type="text" class="form-control" name="city" id="city" placeholder="Shahringizni kiriting" required>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-12">
+        <label><i style="font-weight: bold;">Manzil</i></label>
+        <textarea class="form-control" id="address" name="address" rows="3" placeholder="Manzilingizni kiriting" required></textarea>
+    </div>
+</div>
+
+<div class="row mt-2">
+<div class="form-group col-md-6">
+    <label><i style="font-weight: bold;">Jins</i></label>
+<div style="border: 1px solid lightgrey; padding: 5px; border-radius: 6px;">
+<div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
+    <label class="form-check-label">Erkak</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+    <label class="form-check-label">Ayol</label>
+  </div>
+  </div>
+  </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Qon Guruhi</i></label>
+        <select class="form-control" name="blood_group" required>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>O+</option>
+            <option>O-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            </select>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Rasm</i></label>
+        <input type="file" class="form-control" id="image" name="image" required>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Tug'ilgan sana </i></label>
+        <input type="date" class="form-control" id="date" name="date" required>
+    </div>
+</div>
+
+<div class="row mt-1">
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Parol</i></label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Parolni kiriting" required>
+    </div>
+    <div class="form-group col-md-6">
+        <label><i style="font-weight: bold;">Parolni tasdinglash</i></label>
+        <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Parolni tashdiqlang" required>
+    </div>
+</div>
+
+<button type="submit" class="btn btn-primary">Yuborish</button>
+<button type="reset" class="btn btn-primary">Tozalash</button>
+</form>
+</div>
+{% endblock %}

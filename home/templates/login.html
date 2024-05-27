@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %} Blood Donation {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<form method="post" action="{% url 'login' %}"> 
+    {% csrf_token %}
+    <div class="container mt-5">
+        <div class="mb-3">
+            <label><i style="font-weight: bold;">Email</i></label>
+        <input type="email" class="form-control" name="email" id="username" placeholder="Email kiriting" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label"><i style="font-weight: bold;">Parol</i></label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Parolni kiriting">
+        </div>
+        <br>
+        <input type="submit" value="Submit" class="btn btn-danger" style="color: white; font-size: larger; width: 8rem;">
+    </div>
+</form>
+<!-- <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+    </div>
+    <button type="submit">Login</button>
+</form> -->
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Inavalid Credentials");
+    document.location = "/login"
+    {% endif %}
+</script>
+{% endblock %}
+
